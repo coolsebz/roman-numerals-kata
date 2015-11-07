@@ -1,0 +1,22 @@
+{
+  "name": "roman-numerals-kata",
+  "version": "0.0.1",
+  "description": "A simple project about the Roman Numerals TDD Kata",
+  "main": "server.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/coolsebz/roman-numerals-kata.git"
+  },
+  "keywords": [
+    "roman",
+    "numerals",
+    "kata",
+    "tdd",
+    "example"
+  ],
+  "author": "github.com/coolsebz",
+  "license": "MIT"
+}
