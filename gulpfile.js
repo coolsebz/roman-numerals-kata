@@ -115,3 +115,76 @@ gulp.task('jshint', function() {
     .pipe(plugins.jshint.reporter('fail'));
 });
 
+// ESLint task
+gulp.task('eslint', function() {
+  var assets = _.union(
+    defaultClientAssets.server.gulpConfig,
+    defaultClientAssets.server.allJS,
+    defaultClientAssets.client.js,
+    clientTestAssets.tests.server,
+    clientTestAssets.tests.client,
+    clientTestAssets.tests.e2e,
+    // defaultApiAssets.server.gulpConfig,
+    defaultApiAssets.server.allJS,
+    apiTestAssets.tests.server,
+    apiTestAssets.tests.client,
+    apiTestAssets.tests.e2e
+  );
+
+  return gulp.src(assets)
+    .pipe(plugins.eslint())
+    .pipe(plugins.eslint.format());
+});
+
+// JS minifying
+gulp.task('uglify', function() {
+  var assets = _.union(
+    defaultClientAssets.client.js,
+    defaultClientAssets.client.templates
+  );
+
+});
+
+// CSS minifying
+gulp.task('cssmin', function() {
+  return gulp.src(defaultClientAssets.client.css)
+    .pipe(plugins.cssmin())
+    .pipe(plugins.concat('application.min.css'))
+    .pipe(gulp.dest('client/public/dist'));
+});
+
+// Sass task
+gulp.task('sass', function() {
+  return gulp.src(defaultApiAssets.client.sass)
+    .pipe(plugins.sass())
+    .pipe(plugins.autoprefixer())
+    .pipe(plugins.rename(function(file) {
+      file.dirname = file.dirname.replace(path.sep + 'scss', path.sep + 'css');
+    }))
+    .pipe(gulp.dest('./client/modules/'));
+})
+
+// Angular template cache task
+
+
+// Mocha tests
+
+// Karma test runner
+
+// Task for dropping the DB, used in E2E tests
+
+// Selenium webdriver
+
+// Starts the selenium server
+
+// Protractor test runner
+
+// Lint CSS and JS files
+
+// Lint project files and minify them down to 2 files
+
+// Run the project tests
+
+// Run the project in dev mode
+
+// Run the project in production mode
