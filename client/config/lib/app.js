@@ -28,7 +28,6 @@ module.exports.start = function start(callback) {
       console.log(chalk.green('Client: Starting up'));
       console.log(chalk.green('Env:\t\t\t' + process.env.NODE_ENV));
       console.log(chalk.green('Port:\t\t\t' + config.port));
-      console.log(chalk.green('DB:\t\t\t' + config.db.uri));
       console.log('---');
 
       if (callback) callback(app, db, config);

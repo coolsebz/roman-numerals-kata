@@ -11,11 +11,9 @@ var config = require('../config'),
   express = require('express'),
   morgan = require('morgan'),
   bodyParser = require('body-parser'),
-  favicon = require('serve-favicon'),
   compress = require('compression'),
   methodOverride = require('method-override'),
   helmet = require('helmet'),
-  flash = require('connect-flash'),
   consolidate = require('consolidate'),
   path = require('path');
 
@@ -74,8 +72,6 @@ module.exports.initMiddleware = function (app) {
   }));
   app.use(bodyParser.json());
   app.use(methodOverride());
-
-  app.use(flash());
 };
 
 /**
