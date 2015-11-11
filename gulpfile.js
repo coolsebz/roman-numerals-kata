@@ -185,7 +185,7 @@ gulp.task('templatecache', function() {
 // Mocha tests
 gulp.task('mocha', function(done) {
   // we need mongoose for this
-  var mongose = require('./api/config/lib/mongoose.js'),
+  var mongoose = require('./api/config/lib/mongoose'),
       error;
 
   mongoose.connect(function() {
