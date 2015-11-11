@@ -10,7 +10,6 @@ var config = require('../config'),
   compress = require('compression'),
   methodOverride = require('method-override'),
   helmet = require('helmet'),
-  flash = require('connect-flash'),
   consolidate = require('consolidate'),
   path = require('path');
 
@@ -64,8 +63,6 @@ module.exports.initMiddleware = function (app) {
   }));
   app.use(bodyParser.json());
   app.use(methodOverride());
-
-  app.use(flash());
 };
 
 /**
