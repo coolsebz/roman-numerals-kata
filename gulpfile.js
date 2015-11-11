@@ -40,7 +40,7 @@ gulp.task('nodemon', function() {
       script: 'server.js',
       nodeArgs: ['--debug'],
       ext: 'js,html',
-      watch: _.union(defaultClientAssets.server.views, defaultClientAssets,server.allJS, defaultClientAssets.server.config, 
+      watch: _.union(defaultClientAssets.server.views, defaultClientAssets.server.allJS, defaultClientAssets.server.config, 
                      defaultApiAssets.server.allJS, defaultApiAssets.server.config)
     });
 })
@@ -52,13 +52,13 @@ gulp.task('watch', function() {
   plugins.livereload.listen();  
 
   // Add watch rules (both api and client)
-  gulp.watch(defaultClientAssets.server.views).on('change', plugin.livereload.changed);
-  gulp.watch(defaultClientAssets.server.allJS, ['jshint']).on('change', plugin.livereload.changed);
-  gulp.watch(defaultClientAssets.client.js, ['jshint']).on('change', plugin.livereload.changed);
-  gulp.watch(defaultClientAssets.client.css, ['csslint']).on('change', plugin.livereload.changed);
-  gulp.watch(defaultClientAssets.client.sass, ['sass', 'csslint']).on('change', plugin.livereload.changed);
+  gulp.watch(defaultClientAssets.server.views).on('change', plugins.livereload.changed);
+  gulp.watch(defaultClientAssets.server.allJS, ['jshint']).on('change', plugins.livereload.changed);
+  gulp.watch(defaultClientAssets.client.js, ['jshint']).on('change', plugins.livereload.changed);
+  gulp.watch(defaultClientAssets.client.css, ['csslint']).on('change', plugins.livereload.changed);
+  gulp.watch(defaultClientAssets.client.sass, ['sass', 'csslint']).on('change', plugins.livereload.changed);
 
-  gulp.watch(defaultApiAssets.server.allJS, ['jshint']).on('change', plugin.livereload.changed);
+  gulp.watch(defaultApiAssets.server.allJS, ['jshint']).on('change', plugins.livereload.changed);
 
   // note(seb): we're restarting on changes to the gulp file because that usually means a new version has been made available
   // note(seb): and yes, it's the same file twice, but just to illustrate the concept that this should be loaded twice (once on the client and once on the api)
