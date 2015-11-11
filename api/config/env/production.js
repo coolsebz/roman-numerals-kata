@@ -1,12 +1,13 @@
 'use strict';
 
 module.exports = {
-  secure: {
-    ssl: true,
-    privateKey: './api/config/sslcerts/key.pem',
-    certificate: './api/config/sslcerts/cert.pem'
-  },
-  port: process.env.PORT || 8443,
+  // todo(seb): for ssl, I think it should look something like this
+  // secure: {
+  //   ssl: true,
+  //   privateKey: './api/config/sslcerts/key.pem',
+  //   certificate: './api/config/sslcerts/cert.pem'
+  // },
+  port: process.env.PORT || 3001, //note(seb): should switch to something like 8443 for SSL 
   db: {
     uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/app',
     options: {
@@ -24,5 +25,5 @@ module.exports = {
     options: {
       stream: 'access.log'
     }
-  },
+  }
 };

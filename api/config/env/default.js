@@ -2,7 +2,7 @@
 
 module.exports = {
   app: {
-    title: 'Roman Numerals Kata',
+    title: 'Roman Numerals Kata - Server',
     description: 'A simple project built aroud the Roman Numerals TDD Kata',
     keywords: 'mongodb, express, angularjs, node.js, mongoose',
   },

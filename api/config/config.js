@@ -82,7 +82,12 @@ var initGlobalConfigFolders = function(config, assets) {
 };
 
 var initGlobalConfigFiles = function(config, assets) {
-  
+  // Keep track of the files
+  config.files = {
+    server: {},
+    client: {}
+  };
+
   // Globbed model files
   config.files.server.models = getGlobbedPaths(assets.server.models);
 

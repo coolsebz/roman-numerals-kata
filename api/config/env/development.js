@@ -24,5 +24,4 @@ module.exports = {
   app: {
     title: 'Roman Numerals Kata - Server'
   },
-  livereload: true,
 };
