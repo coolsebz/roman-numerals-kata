@@ -6,7 +6,6 @@ module.exports = {
       css: [
         'client/public/lib/normalize-css/normalize.css',
         'client/public/lib/angular-material/angular-material.css',
-        'client/public/lib/angular-chart.js/dist/angular-chart.css',
       ],
       js: [
         'client/public/lib/angular/angular.js',
@@ -15,13 +14,8 @@ module.exports = {
         'client/public/lib/angular-messages/angular-messages.js',
         'client/public/lib/angular-ui-router/release/angular-ui-router.js',
         'client/public/lib/angular-ui-utils/ui-utils.js',
-        'client/public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-        'client/public/lib/angular-file-upload/angular-file-upload.js',
-        'client/public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'client/public/lib/angular-aria/angular-aria.min.js',
         'client/public/lib/angular-material/angular-material.min.js',
-        'client/public/lib/Chart.js/Chart.min.js',
-        'client/public/lib/angular-chart.js/dist/angular-chart.min.js',
       ],
       tests: ['client/public/lib/angular-mocks/angular-mocks.js']
     },
@@ -44,10 +38,10 @@ module.exports = {
   server: {
     gulpConfig: 'gulpfile.js',
     allJS: ['server.js', 'client/config/**/*.js', 'client/modules/*/server/**/*.js'],
-    collections: 'modules/*/server/collections/**/*.js',
-    routes: ['modules/!(core)/server/routes/**/*.js', 'modules/core/server/routes/**/*.js'],
-    config: 'modules/*/server/config/*.js',
-    policies: 'api/modules/*/server/policies/*.js', //note(seb): for the future, not included right now
-    views: 'modules/*/server/views/*.html'
+    collections: 'client/modules/*/server/collections/**/*.js',
+    routes: ['client/modules/!(core)/server/routes/**/*.js', 'client/modules/core/server/routes/**/*.js'],
+    config: 'client/modules/*/server/config/*.js',
+    policies: 'client/modules/*/server/policies/*.js', //note(seb): for the future, not included right now
+    views: 'client/modules/*/server/views/*.html'
   }
 };
