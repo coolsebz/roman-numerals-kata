@@ -22,7 +22,7 @@ module.exports = {
     }
   },
   app: {
-    title: 'Roman Numerals Kata'
+    title: 'Roman Numerals Kata - Server'
   },
   livereload: true,
 };

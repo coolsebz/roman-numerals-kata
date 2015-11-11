@@ -11,7 +11,7 @@ module.exports = {
     routes: ['modules/!(core)/server/routes/**/*.js', 'modules/core/server/routes/**/*.js'],
     sockets: 'modules/*/server/sockets/**/*.js',
     config: 'modules/*/server/config/*.js',
-    policies: 'modules/*/server/policies/*.js',
+    policies: 'modules/*/server/policies/*.js', //note(seb): for the future, not included right now
     views: 'modules/*/server/views/*.html'
   },
   client: { }
