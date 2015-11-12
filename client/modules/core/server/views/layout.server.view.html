@@ -31,14 +31,13 @@
 </head>
 
 <body class="ng-cloak">
-  <header ng-include="'/modules/core/client/views/header.client.view.html'"></header>
   <section class="content">
     <section class="container">
       {% block content %}{% endblock %}
     </section>
   </section>
 
-  Embedding The User Object
+  <!-- Embedding The User Object -->
   <script type="text/javascript">
     // note(seb): this is how you would enable the express payload into the page
     var config = { apiEndpoint: {{ apiEndpoint | json | safe }} };
