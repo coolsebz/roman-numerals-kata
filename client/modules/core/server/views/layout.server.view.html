@@ -38,11 +38,11 @@
     </section>
   </section>
 
-  <!--Embedding The User Object
+  Embedding The User Object
   <script type="text/javascript">
     // note(seb): this is how you would enable the express payload into the page
-    // var user = {{ user | json | safe }};
-  </script> -->
+    var config = { apiEndpoint: {{ apiEndpoint | json | safe }} };
+  </script> 
 
   <!--Application JavaScript Files-->
   {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
