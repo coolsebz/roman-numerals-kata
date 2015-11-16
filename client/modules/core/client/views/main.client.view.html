@@ -1,0 +1,39 @@
+<section>
+  <h1>Roman Numerals Kata</h1>
+
+  <md-tabs md-stretch-tabs="always" md-center-tabs="" md-dynamic-height="" md-border-bottom=>
+    <md-tab label="Roman to Arabic">
+      <md-content layout="column" layout-align="center center">
+        <form layout="row" layout-align="center center" ng-submit="romanToArabic()">
+          <md-input-container flex="">
+            <label>Roman Numeral</label>
+            <input ng-model="romanNumeral">
+          </md-input-container>
+
+          <md-button class="md-primary" type="submit">Convert</md-button>
+        </form>
+
+        <p ng-show="result">
+          Answer: <span>{{result}}</span>
+        </p>
+      </md-content>
+    </md-tab>
+
+    <md-tab label="Arabic to Roman">
+      <md-content layout="column" layout-align="center center">
+        <form layout="row" layout-align="center center" ng-submit="arabicToRoman()">
+          <md-input-container flex="">
+            <label>Arabic Numeral</label>
+            <input ng-model="arabicNumeral">
+          </md-input-container>
+
+          <md-button class="md-primary" type="submit">Convert</md-button>
+        </form>
+
+        <p ng-show="result">
+          Answer: <span>{{result}}</span>
+        </p>
+      </md-content>
+    </md-tab>
+  </md-tabs>
+</section>
