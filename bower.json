@@ -1,23 +1,12 @@
 {
-  "name": "roman-numerals-kata",
+  "name": "meanjs-distributed",
   "description": "A simple project about the Roman Numerals TDD Kata",
   "main": "server.js",
-  "authors": [
-    "github.com/coolsebz"
-  ],
   "license": "MIT",
-  "keywords": [
-    "roman",
-    "numerals",
-    "kata",
-    "tdd",
-    "example"
-  ],
   "moduleType": [
     "amd",
     "globals"
   ],
-  "homepage": "",
   "private": true,
   "ignore": [
     "**/.*",
@@ -27,13 +16,16 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.7",
-    "angular-animate": "~1.4.7",
-    "angular-material": "1.0.0-rc3",
-    "angular-resource": "~1.4.7",
-    "angular-ui-router": "~0.2.15",
-    "angular-ui-utils": "~3.0.0",
-    "normalize-css": "~3.0.3",
-    "angular-mocks": "~1.4.7"
+    "angular": "~1.5.0",
+    "angular-animate": "~1.5.0",
+    "angular-material": "~1.0.8",
+    "angular-file-upload": "~2.2.0",
+    "angular-messages": "~1.5.0",
+    "angular-mocks": "~1.5.0",
+    "angular-resource": "~1.5.0",
+    "angular-ui-router": "~0.2.18"
+  },
+  "resolutions": {
+    "angular": "~1.5.0"
   }
 }

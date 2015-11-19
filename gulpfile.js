@@ -8,6 +8,7 @@ var _ = require('lodash'),
     gulp = require('gulp'),
     gulpLoadPlugins = require('gulp-load-plugins'),
     runSequence = require('run-sequence'),
+    Server = require('karma').Server,
     plugins = gulpLoadPlugins({
       rename: {
         'gulp-angular-templatecache': 'templateCache'
@@ -212,12 +213,10 @@ gulp.task('mocha', function(done) {
 
 // Karma test runner
 gulp.task('karma', function(done) {
-  return gulp.src([])
-    .pipe(plugins.karma({
-      configFile: 'karma.conf.js',
-      action: 'run',
-      singleRun: true
-    }));
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 // Task for dropping the DB, used in E2E tests
@@ -247,7 +246,7 @@ gulp.task('webdriver_standalone', webdriver_standalone);
 gulp.task('protractor', ['webdriver_update'], function() {
   gulp.src([])
     .pipe(protractor({
-      configFIle: 'protractor.conf.js' 
+      configFile: 'protractor.conf.js' 
     }))
     .on('end', function() {
       console.log('E2E tests completed');
